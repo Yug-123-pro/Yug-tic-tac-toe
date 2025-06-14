@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Changed to column to stack elements */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.game-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px; /* Space between game and history */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.game-message {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #555;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    width: 315px;
+    height: 315px;
+    margin: 0 auto 20px auto;
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #ddd;
+}
+
+.cell.x-mark {
+    color: #e74c3c; /* Red for X */
+}
+
+.cell.o-mark {
+    color: #3498db; /* Blue for O */
+}
+
+#resetButton {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#resetButton:hover {
+    background-color: #27ae60;
+}
+
+/* --- History Section Styles --- */
+.history-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* Limit width of history section */
+}
+
+.history-section h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.history-controls {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+    gap: 8px; /* Space between buttons */
+    justify-content: center;
+}
+
+.history-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    background-color: #95a5a6; /* Grey for inactive */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.history-button:hover {
+    background-color: #7f8c8d;
+}
+
+.history-button.active-history-button {
+    background-color: #3498db; /* Blue for active move */
+    font-weight: bold;
+}
+
+.history-button.active-history-button:hover {
+    background-color: #2980b9;
+}
